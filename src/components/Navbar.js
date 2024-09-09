@@ -1,15 +1,46 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import '../styles/stylesheet.css';
+import { authService } from '../services/authService';
 
-const Navbar = () => {
-    return (
-        <nav>
-            <h1>My App</h1>
-            <ul>
-                <li>Login</li>
-                <li>Register</li>
-            </ul>
-        </nav>
-    );
-};
 
-export default Navbar;
+export default function Navbar({ user, setUser}) {
+  const navigate = useNavigate();
+  async function signout(){
+    try{
+      console.log('signing out');
+      await authService.signout();
+      setUser('');
+      navigate('/');
+    }catch(error){
+      console.log(error);
+    }
+  }
+  return (
+<nav class="navbar">
+  <div class="logo">My App</div>
+  <ul class="nav-links">
+         
+  {user ? (
+          <>
+            
+              <Link to={`${user.id}/Profile`}>Profile</Link>
+            
+              <button className='but-Sign-Out' onClick={signout}>Sign Out</button>
+            
+          </>
+        ) : (
+          <>
+            
+              <li><Link to="/login">Login</Link></li>
+           
+              <li><Link to="/Register">Register</Link></li>
+            
+          </>
+        )} 
+
+      </ul>
+      
+  </nav>
+  );
+}
