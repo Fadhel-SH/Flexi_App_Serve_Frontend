@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+// import React from 'react';
+import { GoogleLogin } from 'react-google-login';
 import { login } from '../services/api';
 
 const Login = () => {
@@ -14,6 +16,29 @@ const Login = () => {
             console.error('Login failed:', error);
         }
     };
+
+    const responseGoogle = (response) => {
+        console.log(response);
+        // Send the response token to your backend for further handling
+        // Example using fetch to send the token
+        fetch('/api/auth/callback', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ token: response.tokenId }),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            // Handle successful login
+        })
+        .catch(err => {
+            console.error(err);
+        });
+    };
+
+
 
     return (
         <form onSubmit={handleSubmit}>
@@ -32,6 +57,13 @@ const Login = () => {
                 required 
             />
             <button type="submit">Login</button>
+            <GoogleLogin
+                clientId="your_google_client_id" // Use your Google client ID
+                buttonText="Login with Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={'single_host_origin'}
+            />
         </form>
     );
 };
