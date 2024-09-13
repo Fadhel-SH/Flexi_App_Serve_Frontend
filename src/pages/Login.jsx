@@ -5,6 +5,7 @@ import { GoogleLogin } from 'react-google-login';
 import { login } from '../services/api'; // Email/password login
 import authService from '../services/authService'; // OAuth handling
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import '../styles/login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -39,6 +40,7 @@ const Login = () => {
     };
 
     return (
+        <div class="card">
         <form onSubmit={handleSubmit}>
             <input 
                 type="email" 
@@ -65,6 +67,7 @@ const Login = () => {
                 cookiePolicy={'single_host_origin'}
             />
         </form>
+        </div>
     );
 };
 

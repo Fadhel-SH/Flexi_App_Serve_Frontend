@@ -30,6 +30,7 @@ export default function Navbar({ user, setUser }) {
                     </>
                 ) : (
                     <>
+                        <li><Link to="/#">Home</Link></li>
                         <li><Link to="/login">Login</Link></li>
                         <li><Link to="/Register">Register</Link></li>
                     </>

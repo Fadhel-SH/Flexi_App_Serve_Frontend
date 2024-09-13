@@ -242,3 +242,58 @@ body {
     to {opacity: 1}
   } 
   
+  
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  .navbar .nav-links {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .navbar .nav-links li {
+      margin: 10px 0; /* Adjust margin for vertical layout */
+  }
+
+  .card {
+      padding: 15px; /* Less padding on smaller screens */
+  }
+
+  .offers-container {
+      flex-direction: column; /* Stack offer cards vertically */
+  }
+
+  .offer-card {
+      max-width: 90%; /* Use more width on mobile */
+      margin: 10px auto; /* Center the offer cards */
+  }
+
+  .feature-block {
+      width: calc(100% - 20px); /* Full width on mobile */
+      margin: 10px 0; /* Adjust margin */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 24px; /* Adjust heading size for small screens */
+  }
+
+  h2 {
+      font-size: 20px; /* Adjust heading size for small screens */
+  }
+
+  .btn, .card form button {
+      padding: 8px; /* Smaller button padding */
+      font-size: 14px; /* Smaller font size */
+  }
+}

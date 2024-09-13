@@ -1,43 +1,42 @@
 /* Header Section */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
 .header {
-    background-color: #bc6afa;
-    color: white;
-    padding: 60px 20px;
     text-align: center;
+    padding: 60px 20px;
+    background-color: #4A90E2; /* Main brand color */
+    color: white;
 }
 
 .header h1 {
-    font-size: 3rem;
+    font-size: 2.5em;
+    margin: 0;
 }
 
 .header p {
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 1.2em;
+    margin: 20px 0;
 }
 
 .header button {
-    background-color: #916de5;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    margin-top: 10px;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: white;
+    background-color: #5cb85c; /* Button color */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, font-size 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 .header button:hover {
-    background-color: #3e159c;
-    color: #fff;
-    font-size: 13px;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    background-color: #4cae4c; /* Darker shade on hover */
 }
 
 /* Service Overview Section */
@@ -54,8 +53,10 @@
 }
 
 .service-overview h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #4A90E2; 
 }
 
 .service-cards {
@@ -85,8 +86,10 @@
 }
 
 .features h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #4A90E2; 
 }
 
 .feature-cards {
@@ -134,9 +137,12 @@
 }
 
 .testimonials h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: #4A90E2; 
 }
+
 
 .testimonial-card {
     background-color: white;
@@ -144,6 +150,8 @@
     border-radius: 10px;
     margin: 20px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #4A90E2; 
+    padding-left: 15px;
 }
 
 .testimonial-card p {

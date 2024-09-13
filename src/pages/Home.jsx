@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <section  >
         <div className="header">
-      <h1>Welcome to CodeTrio Task Manager</h1>
+      <h1>Welcome to Flexi App</h1>
       <p>Your efficient project management solution.</p>
       <button onClick={() => window.location.href = '/#'}>Get Started</button>
 </div>
