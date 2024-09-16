@@ -5,14 +5,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../styles/stylesheet.css';
 import authService from '../services/authService'; 
 
-export default function Navbar({ user, setUser }) {
+export default function Navbar() {
+    const user = authService.getCurrentUser();
+
     const navigate = useNavigate();
 
     async function signout() {
         try {
             console.log('signing out');
             await authService.logout(); 
-            setUser('');
+            authService.setUser('');
             navigate('/');
         } catch (error) {
             console.log(error);

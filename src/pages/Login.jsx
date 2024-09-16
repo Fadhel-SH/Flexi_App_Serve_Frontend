@@ -19,7 +19,7 @@ const Login = () => {
         try {
             const response = await login({ email, password });
             console.log('Login success:', response.data);
-            authService.login(response.data.token); // Store token using authService
+            authService.setUser(response.data.user); // Store user using authService
             navigate('/profile'); // Redirect to profile using navigate
         } catch (error) {
             console.error('Login failed:', error);
@@ -60,7 +60,7 @@ const Login = () => {
                 {loading ? 'Logging in...' : 'Login'}
             </button>
             <GoogleLogin
-                clientId="your_google_client_id" // Use your Google client ID
+                clientId="1014921492756-9b71mlrvguu7sj1t29mseka9vrhak1so.apps.googleusercontent.com" // Use your Google client ID
                 buttonText="Login with Google"
                 onSuccess={responseGoogle} // Correctly set onSuccess
                 onFailure={responseGoogle} // Correctly set onFailure
